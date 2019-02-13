@@ -820,8 +820,9 @@
  * If this value is changed to other number, please update the
  * PJMEDIA_RTP_PT_TELEPHONE_EVENTS_STR too.
  */
+// COREDIAL: 101 is required for Oreka call recording DTMF
 #ifndef PJMEDIA_RTP_PT_TELEPHONE_EVENTS
-#   define PJMEDIA_RTP_PT_TELEPHONE_EVENTS	    96
+#   define PJMEDIA_RTP_PT_TELEPHONE_EVENTS	    101
 #endif
 
 
@@ -830,7 +831,7 @@
  * payload type.
  */
 #ifndef PJMEDIA_RTP_PT_TELEPHONE_EVENTS_STR
-#   define PJMEDIA_RTP_PT_TELEPHONE_EVENTS_STR	    "96"
+#   define PJMEDIA_RTP_PT_TELEPHONE_EVENTS_STR	    "101"
 #endif
 
 
