@@ -1,0 +1,3 @@
+The license is PJSIP proprietary license.
+CoreDial LLC has wrapped PJSIP library in a cocoapod for internal use.
+It is not to be distributed outside of CoreDial

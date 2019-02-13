@@ -1,0 +1,5 @@
+*.a
+*.java
+*.tar.gz
+Pod/
+logs/
