@@ -2415,6 +2415,12 @@ pj_status_t pjsua_media_channel_create_sdp(pjsua_call_id call_id,
 	if (status != PJ_SUCCESS)
 	    return status;
 
+        //CoreDial Code: pjmedia SDP media configuration
+        //(Allows for changes)
+        if (pjsua_var.ua_cfg.cb.on_media_sdp_config) {
+            (*pjsua_var.ua_cfg.cb.on_media_sdp_config)(m);
+        }
+
 	sdp->media[sdp->media_count++] = m;
 
 	/* Give to transport */
