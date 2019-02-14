@@ -601,7 +601,8 @@
  * Default: 0 (disabled, for now)
  */
 #ifndef PJ_HAS_IPV6
-#  define PJ_HAS_IPV6		    0
+//CoreDial Core - Changed to support IPv6
+#  define PJ_HAS_IPV6		    1
 #endif
 
  /**
