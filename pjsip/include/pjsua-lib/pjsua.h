@@ -632,6 +632,12 @@ typedef void (*pj_stun_sip_cb)(pj_sockaddr *pj_pub_addr);
  */
 typedef void (*pj_media_sdp_cb)(pjmedia_sdp_media *m);
 
+/** CoreDial Code
+ * Typedef of callback to be registered when a incoming call invite is 
+ * first received
+ */
+typedef void (*pj_incoming_invite_cb)(void);
+
 /**
  * This enumeration specifies the options for custom media transport creation.
  */
@@ -1743,6 +1749,12 @@ typedef struct pjsua_callback
      * media values before the INVITE is sent
      */
     pj_media_sdp_cb on_media_sdp_config;
+
+    /** CoreDial Code
+     * Callback to be registered when a incoming call invite is 
+     * first received
+     */
+    pj_incoming_invite_cb on_incoming_invite;
 
     /** 
      * Calling #pjsua_handle_ip_change() may involve different operation. This 

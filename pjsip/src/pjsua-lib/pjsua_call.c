@@ -1384,6 +1384,10 @@ pj_bool_t pjsua_call_on_incoming(pjsip_rx_data *rdata)
     if (dlg || tsx)
 	return PJ_FALSE;
 
+    if (pjsua_var.ua_cfg.cb.on_incoming_invite) {
+        pjsua_var.ua_cfg.cb.on_incoming_invite();
+    }
+
     /* Don't want to accept the call if shutdown is in progress */
     if (pjsua_var.thread_quit_flag) {
 	pjsip_endpt_respond_stateless(pjsua_var.endpt, rdata,
