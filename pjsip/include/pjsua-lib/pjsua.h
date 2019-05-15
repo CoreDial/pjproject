@@ -620,6 +620,23 @@ typedef pj_status_t
  */
 typedef void (*pj_stun_resolve_cb)(const pj_stun_resolve_result *result);
 
+/** CoreDial Code
+ * Typedef of callback to be registered to on_stun_sip after the STUN call
+ * is made but before the SIP header is created
+ */
+typedef void (*pj_stun_sip_cb)(pj_sockaddr *pj_pub_addr);
+
+/** CoreDial Code
+ * Typedef of callback to be registered to on_media_sdp_config after the
+ * media configuration is made but before the SDP body is created
+ */
+typedef void (*pj_media_sdp_cb)(pjmedia_sdp_media *m);
+
+/** CoreDial Code
+ * Typedef of callback to be registered when a incoming call invite is 
+ * first received
+ */
+typedef void (*pj_incoming_invite_cb)(void);
 
 /**
  * This enumeration specifies the options for custom media transport creation.
@@ -1720,6 +1737,24 @@ typedef struct pjsua_callback
      * See also #pj_stun_resolve_cb.
      */
     pj_stun_resolve_cb on_stun_resolution_complete;
+
+    /** CoreDial Code
+     * Callback to allow the application to change the SIP
+     * values before the INVITE is sent
+     */
+    pj_stun_sip_cb on_stun_sip;
+
+    /** CoreDial Code
+     * Callback to allow the application to change the SDP
+     * media values before the INVITE is sent
+     */
+    pj_media_sdp_cb on_media_sdp_config;
+
+    /** CoreDial Code
+     * Callback to be registered when a incoming call invite is 
+     * first received
+     */
+    pj_incoming_invite_cb on_incoming_invite;
 
     /** 
      * Calling #pjsua_handle_ip_change() may involve different operation. This 

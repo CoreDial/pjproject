@@ -6,6 +6,9 @@ mkdir Pod
 mkdir Pod/pjsip-include
 mkdir Pod/pjsip-lib
 
+#Change this if the version of the pod needs to change
+podver="1.2.0"
+
 # see http://stackoverflow.com/a/3915420/318790
 function realpath { echo $(cd $(dirname "$1"); pwd)/$(basename "$1"); }
 
@@ -276,6 +279,6 @@ cp -R ../*/include/* Pod/pjsip-include/
 
 #delete any stale archives
 rm pjsip-ios-cd-*.tar.gz
-COPYFILE_DISABLE=1 tar -zcvf pjsip-ios-cd-1.0.0.tar.gz Pod/* LICENSE README.md *podspec
+COPYFILE_DISABLE=1 tar -zcvf pjsip-ios-cd-${podver}.tar.gz Pod/* LICENSE README.md *podspec
 
 echo "Done"

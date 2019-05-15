@@ -2363,6 +2363,11 @@ static pj_status_t create_sip_udp_sock(int af,
 	    }
 	}
 
+        //CoreDial Code: Callback after STUN is configured for SIP
+        //(Allows for changes)
+        if (pjsua_var.ua_cfg.cb.on_stun_sip)
+         (*pjsua_var.ua_cfg.cb.on_stun_sip)(p_pub_addr);
+
     } else {
 
 	pj_bzero(p_pub_addr, sizeof(pj_sockaddr));
