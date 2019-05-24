@@ -16,6 +16,7 @@ find . -name "*.depend" -exec rm {} \;
 
 echo "TARGET_ABI = $1"
 NDK_TOOLCHAIN_VERSION=4.9 TARGET_ABI=$1 APP_PLATFORM=android-28 ./configure-android --use-ndk-cflags
+#TARGET_ABI=$1 APP_PLATFORM=android-28 ./configure-android --use-ndk-cflags
 
 # this generates the default armeabi shared library and can be used to generate
 # the jni bindings which will then be copied. Only the bindings from this build set will be copied

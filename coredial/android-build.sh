@@ -1,4 +1,13 @@
-cd pjproject
+#!/bin/bash
+cwd=`pwd`
+mydir=`basename $cwd`
+if [ "$mydir" = "coredial" ]; then
+   cd ..
+fi
+if [ ! -f "./android-build.sh" ]; then
+   echo "Cannot find android-build.sh make sure you are in the pjproject or coredial directory"
+   exit 1
+fi
 
 ./android-build.sh armeabi-v7a
 mkdir ./pjsip-apps/src/swig/java/android/app/src/main/jniLibs/armeabi-v7a
