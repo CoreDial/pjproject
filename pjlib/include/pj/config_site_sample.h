@@ -73,7 +73,7 @@
      */
     #define PJSIP_MAX_TSX_COUNT 		31
     #define PJSIP_MAX_DIALOG_COUNT 		31
-    #define PJSUA_MAX_CALLS			4
+    #define PJSUA_MAX_CALLS			8
 
     /*
      * PJSUA settings
@@ -200,7 +200,7 @@
     /* Set maximum number of dialog/transaction/calls to minimum */
     #define PJSIP_MAX_TSX_COUNT 		31
     #define PJSIP_MAX_DIALOG_COUNT 		31
-    #define PJSUA_MAX_CALLS			4
+    #define PJSUA_MAX_CALLS			8
 
     /* Other pjsua settings */
     #define PJSUA_MAX_ACC			4
@@ -349,7 +349,7 @@
     /* Set maximum number of dialog/transaction/calls to minimum */
     #define PJSIP_MAX_TSX_COUNT 		31
     #define PJSIP_MAX_DIALOG_COUNT 		31
-    #define PJSUA_MAX_CALLS			4
+    #define PJSUA_MAX_CALLS			8
 
     /* Other pjsua settings */
     #define PJSUA_MAX_ACC			4
@@ -409,7 +409,7 @@
     /* Set maximum number of dialog/transaction/calls to minimum */
     #define PJSIP_MAX_TSX_COUNT 		31
     #define PJSIP_MAX_DIALOG_COUNT 		31
-    #define PJSUA_MAX_CALLS			4
+    #define PJSUA_MAX_CALLS			8
 
     /* Separate worker thread for timer and ioqueue */
     // #define PJSUA_SEPARATE_WORKER_FOR_TIMER	1
